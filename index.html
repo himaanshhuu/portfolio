@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Himanshu Kumar | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<div id="loader">
+  <div class="ring"></div>
+  <h2>Himanshu Kumar</h2>
+</div>
+
+
+<header class="navbar">
+  <h2 class="brand">Himanshu</h2>
+
+  <ul id="navLinks">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certs">Certificates</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <button onclick="toggleMode()" class="mode">🌙</button>
+</header>
+
+
+<section id="home" class="hero page">
+  <div class="glass">
+    <img src="profile.jpg" class="pfp" />
+    <h1>Himanshu Kumar</h1>
+    <h3><span id="typing"></span></h3>
+
+    <div class="btn-row">
+      <a href="resume.pdf" download class="cta">⬇ Download Resume</a>
+      <a href="https://wa.me/917762931113" target="_blank" class="cta green">
+        💬 WhatsApp Me
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section id="skills" class="section page">
+  <h2>Skills</h2>
+
+  <div class="grid">
+    <div class="card">C Programming</div>
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
+  </div>
+</section>
+
+
+<section id="projects" class="section page">
+  <h2>Projects</h2>
+
+  <div class="grid">
+
+    <div class="project-card">
+      <img src="portfolio.png" />
+      <h3>Portfolio Website</h3>
+      <p>HTML • CSS • JavaScript</p>
+    </div>
+
+    <a href="calculator.html" target="_blank" class="project-card link">
+      <img src="calc.png" />
+      <h3>Calculator</h3>
+      <p>JavaScript Based App</p>
+    </a>
+
+  </div>
+</section>
+
+
+<section id="certs" class="section page">
+  <h2>Certificates</h2>
+
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <img src="webdevelopment.jpeg" onclick="openPopup(this.src)">
+      <h3>Web Development Certificate</h3>
+      <a href="webdevelopment.jpeg" download class="download-btn">⬇ Download</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="programminginc.jpeg" onclick="openPopup(this.src)">
+      <h3>Programming in C</h3>
+      <a href="programminginc.jpeg" download class="download-btn">⬇ Download</a>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="reviews" class="section page">
+  <h2>Reviews</h2>
+
+  <div class="review-box">
+
+    <form onsubmit="addReview(event)">
+      <input id="revName" placeholder="Your Name" required>
+      <textarea id="revText" placeholder="Write your review..." required></textarea>
+      <button class="cta small" type="submit">Submit Review</button>
+    </form>
+
+    <h3 style="margin-top:20px;">User Reviews</h3>
+
+    <div id="reviewList" class="review-list"></div>
+
+  </div>
+</section>
+
+
+<section id="contact" class="section page">
+  <h2>Contact</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Email</h3>
+      <p>himanshukumar7667039681@gmail.com</p>
+      <a href="mailto:himanshukumar7667039681@gmail.com" class="cta small">
+        Send Mail
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Phone</h3>
+      <p>+91 7762931113</p>
+      <a href="tel:+917762931113" class="cta small">
+        Call Me
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+  © 2025 Himanshu Kumar
+</footer>
+
+
+<div id="popup">
+  <span onclick="closePopup()">×</span>
+  <img id="popupImg" />
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

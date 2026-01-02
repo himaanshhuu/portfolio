@@ -1,0 +1,275 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial}
+html{scroll-behavior:smooth}
+
+/* PARTICLES */
+#particles{
+ position:fixed;
+ inset:0;
+ z-index:-5;
+ pointer-events:none;
+}
+
+/* LIGHT MODE */
+body{
+ background:#eef2ff;
+ color:#020617;
+ opacity:0;
+ transition:.6s;
+}
+
+/* DARK MODE */
+body.dark{
+ background:#020617;
+ color:#f3f4f6;
+}
+
+/* LOADER */
+#loader{
+ position:fixed;inset:0;
+ display:flex;flex-direction:column;
+ justify-content:center;align-items:center;
+ background:#020617;
+ color:white;
+ z-index:100;
+}
+.ring{
+ width:70px;height:70px;
+ border:5px solid #7c3aed;
+ border-top-color:transparent;
+ border-radius:50%;
+ animation:spin 1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* NAVBAR */
+.navbar{
+ display:flex;justify-content:space-between;
+ padding:18px 32px;
+ position:sticky;top:0;
+ background:#eef2ffdd;
+ backdrop-filter:blur(20px);
+ z-index:20;
+}
+body.dark .navbar{background:#020617dd}
+
+#navLinks{display:flex;gap:14px;list-style:none;flex-wrap:wrap}
+#navLinks a{
+ text-decoration:none;
+ color:inherit;
+ opacity:.7;
+ padding:6px 10px;
+ border-radius:12px;
+}
+#navLinks a.active,#navLinks a:hover{
+ opacity:1;
+ background:linear-gradient(130deg,#7c3aed,#06b6d4);
+ color:white;
+}
+.brand{
+ background:linear-gradient(130deg,#7c3aed,#06b6d4);
+ -webkit-background-clip:text;
+ color:transparent;
+}
+
+/* HERO */
+.hero{
+ min-height:90vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+}
+.glass{
+ background:white;
+ padding:35px;
+ border-radius:22px;
+ text-align:center;
+ box-shadow:0 0 25px #0002;
+}
+body.dark .glass{background:#0b122acc;color:#fff}
+
+.pfp{
+ width:130px;height:130px;
+ border-radius:50%;
+ border:3px solid #6366f1;
+ object-fit:cover;
+}
+
+.btn-row{
+ margin-top:15px;
+ display:flex;
+ gap:10px;
+ flex-wrap:wrap;
+ justify-content:center;
+}
+
+/* BUTTONS */
+.cta,.download-btn{
+ padding:10px 18px;
+ border-radius:14px;
+ text-decoration:none;
+ color:white !important;
+ background:linear-gradient(130deg,#7c3aed,#06b6d4);
+}
+.green{background:linear-gradient(130deg,#22c55e,#10b981)}
+.small{padding:8px 14px}
+
+/* SECTIONS */
+.section{
+ padding:70px 40px;
+ max-width:950px;
+ margin:auto;
+ opacity:0;
+ transform:translateY(25px);
+ transition:.6s;
+}
+.section.show{opacity:1;transform:translateY(0)}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:18px;
+}
+
+/* CARDS */
+.card,.project-card,.cert-card,.review-box{
+ background:white;
+ padding:20px;
+ border-radius:18px;
+ text-align:center;
+ box-shadow:0 0 20px #0002;
+}
+body.dark .card,
+body.dark .project-card,
+body.dark .cert-card,
+body.dark .review-box{
+ background:#0b122acc;
+ color:#fff;
+}
+
+/* PROJECT IMAGES */
+.project-card img{
+ width:100%;
+ border-radius:14px;
+ margin-bottom:10px;
+}
+
+/* CERTIFICATES */
+.cert-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:18px;
+}
+.cert-card img{
+ width:100%;
+ max-height:220px;
+ object-fit:contain;
+ border-radius:14px;
+ cursor:pointer;
+ background:#f3f4ff;
+}
+
+/* REVIEWS */
+.review-list{
+ display:flex;
+ flex-direction:column;
+ gap:12px;
+ margin-top:15px;
+}
+.review{
+ background:#f3f4ff;
+ padding:12px;
+ border-radius:14px;
+}
+.review strong{color:#4338ca}
+.review small{opacity:.7}
+.del{
+ float:right;
+ background:red;
+ border:none;
+ color:white;
+ padding:3px 8px;
+ border-radius:6px;
+ cursor:pointer;
+}
+
+/* POPUP */
+#popup{
+ position:fixed;
+ inset:0;
+ background:#000c;
+ display:none;
+ justify-content:center;
+ align-items:center;
+}
+#popup img{max-width:92%;border-radius:18px}
+#popup span{
+ position:absolute;
+ top:25px;
+ right:35px;
+ font-size:30px;
+ color:white;
+ cursor:pointer;
+}
+
+/* FOOTER */
+footer{text-align:center;padding:20px;opacity:.7}
+
+
+/* ---------------- MOBILE FIX ---------------- */
+@media(max-width:768px){
+
+  .navbar{
+    flex-wrap:wrap;
+    gap:10px;
+    padding:12px 16px;
+  }
+
+  #navLinks{
+    justify-content:center;
+  }
+
+  #navLinks a{
+    font-size:13px;
+    padding:6px 10px;
+  }
+
+  .glass{
+    width:95%;
+    padding:20px;
+  }
+
+  .pfp{
+    width:105px;
+    height:105px;
+  }
+
+  .btn-row{
+    flex-direction:column;
+  }
+
+  .cta{
+    width:100%;
+    text-align:center;
+  }
+
+  .section{
+    padding:45px 18px;
+  }
+
+  .card,.project-card,.cert-card{
+    padding:14px;
+    font-size:14px;
+  }
+
+  .review-box{
+    padding:16px;
+  }
+
+  input,textarea{
+    width:100%;
+  }
+
+  .small{
+    width:100%;
+  }
+}
